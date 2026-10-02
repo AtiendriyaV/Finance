@@ -1,0 +1,160 @@
+import { SectorRotationNode, WeekendMacroReport } from '../types/market';
+
+export const SECTOR_ROTATION_DATA: SectorRotationNode[] = [
+  {
+    sector: 'Nifty Auto',
+    benchmark: 'NIFTY 50',
+    rsRatio: 104.5,
+    rsMomentum: 102.8,
+    quadrant: 'LEADING',
+    oneWeekReturn: 2.45,
+    oneMonthReturn: 6.80,
+    keyHoldings: 'Tata Motors, Mahindra & Mahindra, Maruti Suzuki, Bajaj Auto',
+  },
+  {
+    sector: 'Nifty Realty',
+    benchmark: 'NIFTY 50',
+    rsRatio: 103.8,
+    rsMomentum: 101.4,
+    quadrant: 'LEADING',
+    oneWeekReturn: 1.85,
+    oneMonthReturn: 5.40,
+    keyHoldings: 'DLF, Godrej Properties, Macrotech Developers, Oberoi Realty',
+  },
+  {
+    sector: 'Nifty Bank',
+    benchmark: 'NIFTY 50',
+    rsRatio: 101.2,
+    rsMomentum: 102.1,
+    quadrant: 'LEADING',
+    oneWeekReturn: 1.60,
+    oneMonthReturn: 4.10,
+    keyHoldings: 'HDFC Bank, ICICI Bank, State Bank of India, Axis Bank',
+  },
+  {
+    sector: 'Nifty Metal',
+    benchmark: 'NIFTY 50',
+    rsRatio: 101.5,
+    rsMomentum: 98.4,
+    quadrant: 'WEAKENING',
+    oneWeekReturn: 0.45,
+    oneMonthReturn: 3.20,
+    keyHoldings: 'Tata Steel, JSW Steel, Hindalco, Vedanta',
+  },
+  {
+    sector: 'Nifty Energy',
+    benchmark: 'NIFTY 50',
+    rsRatio: 100.8,
+    rsMomentum: 97.9,
+    quadrant: 'WEAKENING',
+    oneWeekReturn: -0.80,
+    oneMonthReturn: 1.10,
+    keyHoldings: 'Reliance, NTPC, ONGC, Power Grid',
+  },
+  {
+    sector: 'Nifty FMCG',
+    benchmark: 'NIFTY 50',
+    rsRatio: 97.2,
+    rsMomentum: 98.2,
+    quadrant: 'LAGGING',
+    oneWeekReturn: -1.15,
+    oneMonthReturn: -2.40,
+    keyHoldings: 'Hindustan Unilever, ITC, Nestle India, Britannia',
+  },
+  {
+    sector: 'Nifty IT',
+    benchmark: 'NIFTY 50',
+    rsRatio: 96.8,
+    rsMomentum: 99.1,
+    quadrant: 'LAGGING',
+    oneWeekReturn: -0.65,
+    oneMonthReturn: -3.10,
+    keyHoldings: 'TCS, Infosys, HCL Tech, Wipro, Tech Mahindra',
+  },
+  {
+    sector: 'Nifty Pharma',
+    benchmark: 'NIFTY 50',
+    rsRatio: 98.6,
+    rsMomentum: 101.8,
+    quadrant: 'IMPROVING',
+    oneWeekReturn: 1.20,
+    oneMonthReturn: 2.15,
+    keyHoldings: 'Sun Pharma, Cipla, Dr Reddys, Lupin',
+  },
+  {
+    sector: 'Nifty Infrastructure',
+    benchmark: 'NIFTY 50',
+    rsRatio: 99.4,
+    rsMomentum: 102.5,
+    quadrant: 'IMPROVING',
+    oneWeekReturn: 1.95,
+    oneMonthReturn: 3.85,
+    keyHoldings: 'L&T, Adani Ports, UltraTech Cement, Grasim',
+  }
+];
+
+export const CURRENT_WEEKEND_MACRO_REPORT: WeekendMacroReport = {
+  weekEndingDate: '2026-10-02',
+  title: 'Systematic Macro Synthesis: Domestic Liquidity Superiority, Decoupling from US Rates, and Capital Goods Rotation',
+  crossAssetCorrelations: [
+    {
+      assetPair: 'NIFTY 50 vs S&P 500',
+      correlation1M: 0.42,
+      correlation1Y: 0.68,
+      zScore: -1.75,
+      status: 'DECOUPLING',
+      commentary: 'Nifty is displaying notable idiosyncratic resilience, driven by Rs 24,000 Cr/month domestic SIP liquidity. 30-day rolling correlation dropped from 0.68 to 0.42.',
+    },
+    {
+      assetPair: 'NIFTY 50 vs Brent Crude',
+      correlation1M: -0.64,
+      correlation1Y: -0.32,
+      zScore: -2.10,
+      status: 'ANOMALOUS_BREAKDOWN',
+      commentary: 'Crude softening below $75/bbl provides an outsized macro tailwind for India’s oil marketing companies, paints, and airlines, enhancing current account stability.',
+    },
+    {
+      assetPair: 'NIFTY 50 vs USD/INR',
+      correlation1M: -0.58,
+      correlation1Y: -0.45,
+      zScore: -0.85,
+      status: 'NORMAL',
+      commentary: 'Standard negative correlation intact; steady RBI FX reserves ($690B+) keep currency volatility near 10-year lows (USD/INR 1-month realized vol < 2.5%).',
+    },
+    {
+      assetPair: 'NIFTY 50 vs India 10Y Yield',
+      correlation1M: -0.35,
+      correlation1Y: -0.22,
+      zScore: -0.62,
+      status: 'NORMAL',
+      commentary: 'Bond rally (yields compressing toward 6.78%) is supporting equity valuation multiples, particularly for rate-sensitive financials and real estate.',
+    },
+    {
+      assetPair: 'MCX Gold vs US 10Y Real Yield',
+      correlation1M: -0.15,
+      correlation1Y: -0.71,
+      zScore: 2.85,
+      status: 'ANOMALOUS_BREAKDOWN',
+      commentary: 'Gold continues to print all-time highs despite positive US real yields, signaling sovereign central bank de-dollarization and structural gold accumulation.',
+    },
+  ],
+  breadthMetrics: {
+    pctAbove200EMA: 74.2, // Healthy long-term trend
+    pctAbove50EMA: 66.8,  // Intermediate strength
+    net52WHighLows: 42,   // Strongly positive (48 highs vs 6 lows in Nifty 500)
+    advanceDeclineRatio: 1.65,
+    mcclellanOscillator: 24.8,
+  },
+  structuralShifts: [
+    'The "Financialization of Indian Household Wealth" regime is now an empirical reality: Domestic Institutional Investors (DIIs) have absorbed over 85% of net FII selling across 2024-2026, breaking the historical rule where FII outflows guaranteed bear markets.',
+    'Sovereign Bond Inclusions (JP Morgan GBI-EM & Bloomberg Index) have structurally lowered India’s sovereign risk premium and reduced the 10Y yield spread over US Treasuries to sub-290 bps.',
+    'Private capex revival is showing statistical divergence: Heavy industrial capex (defense, power transmission, railways, renewables) is in secular expansion, while consumer durable capex remains subdued.'
+  ],
+  cyclicalAnomalies: [
+    'Sector Dispersion Anomaly: Auto and Real Estate relative momentum scores (RRG) are at 94th percentile, while IT services remain in the Lagging quadrant due to cautious client tech budgets.',
+    'Option Skew Inversion: 25-delta Put-Call skew on Nifty 50 is at multi-month lows (flat skew), reflecting excessive complacency among institutional hedgers. Historically, this precedes sudden short-term volatility spikes (India VIX > 16).',
+    'Smallcap-to-Largecap Valuation Premium: Mid/Small cap index PE sits at a 28% premium to Nifty 50, exceeding the 10-year historical mean of 8%. High probability of factor rotation from high-beta small caps into large-cap quality.'
+  ],
+  weeklyMacroVerdict: 'Market regime is structurally bullish with elevated internal dispersion. Domestic liquidity creates an impenetrable floor around 24,400 on Nifty 50, but stretched small-cap valuations warrant tactical factor rotation into large-cap quality and private financials.',
+  recommendedPositioning: 'Portfolio allocation: 60% Large-Cap Quality (Private Banks, Auto, Power), 20% Tactical Cyclical (Infra, Defense), 10% Gold ETF (Geopolitical tail hedge), 10% Overnight Cash/Liquid G-Secs. Purchase out-of-the-money Nifty put options to hedge flat option skew anomaly.',
+};

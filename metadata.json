@@ -1,0 +1,6 @@
+{
+  "name": "ArthaQuant Institutional Market Terminal",
+  "description": "Institutional-grade market analytics, regime-switching backtester, automated daily intelligence pipeline, and historical macro archive for equity research and portfolio management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
