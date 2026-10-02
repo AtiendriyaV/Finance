@@ -9,11 +9,12 @@ import {
   Compass, 
   ShieldCheck, 
   Layers, 
-  Code
+  Code,
+  Award
 } from 'lucide-react';
 import { MULTI_MARKET_ASSETS } from '../data/mockMarketData';
 
-export type NavTab = 'DASHBOARD' | 'RESEARCH_LAB' | 'MERGERS_ACQUISITIONS' | 'WEEKEND_SYSTEMATIC' | 'MONGO_ARCHIVE';
+export type NavTab = 'DASHBOARD' | 'RESEARCH_LAB' | 'MERGERS_ACQUISITIONS' | 'WEEKEND_SYSTEMATIC' | 'MONGO_ARCHIVE' | 'INTERVIEW_LAB';
 
 interface HeaderProps {
   activeTab: NavTab;
@@ -207,6 +208,19 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenD
           >
             <Archive className="w-3.5 h-3.5" />
             <span>05. MongoDB Historical Archive</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('INTERVIEW_LAB')}
+            className={`flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-md transition-all whitespace-nowrap ${
+              activeTab === 'INTERVIEW_LAB'
+                ? 'bg-amber-950/80 text-amber-300 border border-amber-700/80 shadow-sm ring-1 ring-amber-500/20'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+            }`}
+          >
+            <Award className="w-3.5 h-3.5 text-amber-400" />
+            <span className="font-semibold text-amber-300">06. Interview & Concept Lab</span>
+            <span className="text-[10px] bg-amber-900/60 text-amber-300 px-1 rounded font-mono">CFA / ER PREP</span>
           </button>
         </div>
       </div>
